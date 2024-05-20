@@ -1,38 +1,133 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700&display=swap");
+
+body{
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  outline: none;
+  background-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.container {
+    margin: 1em auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    padding: 1em;
   }
-}
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Default to one column */
+    grid-gap: 0.2em;
+    justify-content: center;
+  }
+  
+  /* Responsive grid for small screens */
+  @media (min-width: 576px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Responsive grid for medium screens */
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* Responsive grid for large screens */
+  @media (min-width: 992px) {
+    .grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  h2 {
+    background-color:rgba(26, 15, 171, 0.195);
+    padding: 20px;
+  }
+  
+  /* Card styling */
+  .card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0.25em;
+    box-shadow: 0 0.125em 0.25em rgba(0, 0, 0, 0.075);
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-body {
+    padding: 1em;
+  }
+  
+  .btn {
+    margin-top: 1em;
+  }
+  
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*Navbar*/
+.main-nav {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-columns: 10rem 1fr 2fr 1fr 10rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+ padding: 20px;
+ justify-content: space-around;
+ align-items: center;
+}
+.logo {
+  width: 20vw;
+}
+@media (max-width: 900px) {
+  a{
+      font-size: 75% !important;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+
+.container {
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.movie-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-box img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.movie-box:hover img {
+  transform: scale(1.05);
+}
+
+.movie-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
 }
